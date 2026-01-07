@@ -1,41 +1,34 @@
 
-# 🦷 Website Dr. Marcio Castro
+# 🦷 Website Dr. Marcio Castro - Odontologia de Excelência
 
-## 🛠 Solução para o erro "src refspec main does not match any"
+## 🚀 Como subir o site (Passo a Passo CMD)
 
-Se você recebeu esse erro no CMD, execute estes passos:
+Se você encontrou erros de "remote already exists" ou "refspec", use estes comandos nesta ordem:
 
-1. **Confirme que você tem commits:**
-   ```cmd
-   git add .
-   git commit -m "feat: correção de estrutura"
-   ```
+```cmd
+# 1. Limpar conexões antigas
+git remote remove origin
 
-2. **Force o nome da branch para main:**
-   ```cmd
-   git branch -M main
-   ```
+# 2. Inicializar e preparar
+git init
+git add .
+git commit -m "Projeto Dr Marcio Castro"
+git branch -M main
 
-3. **Verifique se o link do repositório está certo:**
-   *Troque 'seu-usuario' pelo seu nome no GitHub*
-   ```cmd
-   git remote set-url origin https://github.com/CalercMusic/site-dentista.git
-   ```
+# 3. Conectar ao seu GitHub (Troque pelo seu link)
+git remote add origin https://github.com/CalercMusic/site-dentista.git
 
-4. **Envie os arquivos:**
-   ```cmd
-   git push -u origin main
-   ```
+# 4. Enviar
+git push -u origin main
+```
 
----
+## 🌍 Hospedagem (Vercel)
 
-## 🌐 Onde hospedar para não dar erro?
+Para o site funcionar com os arquivos `.tsx` e a Inteligência Artificial:
 
-**NÃO use o GitHub Pages diretamente com arquivos .tsx.** O GitHub Pages não sabe ler esses arquivos.
+1. Crie conta na [Vercel](https://vercel.com) usando seu GitHub.
+2. Importe o projeto `site-dentista`.
+3. Em **Environment Variables**, adicione a `API_KEY` (sua chave do Gemini).
+4. Clique em **Deploy**.
 
-**A solução definitiva é a Vercel:**
-1. Crie conta em [vercel.com](https://vercel.com).
-2. Clique em **Add New** -> **Project**.
-3. Importe este repositório do seu GitHub.
-4. **IMPORTANTE:** Em "Environment Variables", adicione `API_KEY` com sua chave do Gemini.
-5. Clique em **Deploy**. A Vercel vai transformar seus arquivos `.tsx` em um site real automaticamente.
+O site estará online em um link profissional em menos de 1 minuto!

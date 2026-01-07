@@ -4,8 +4,8 @@ import react from '@vitejs/plugin-react';
 import EnvironmentPlugin from 'vite-plugin-environment';
 
 export default defineConfig({
-  // 'base' deve ser o nome do seu repositório no GitHub entre barras
-  base: '/site-dentista/',
+  // Para Vercel, o base deve ser '/'
+  base: '/',
   plugins: [
     react(),
     EnvironmentPlugin(['API_KEY'])
