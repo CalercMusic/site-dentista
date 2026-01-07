@@ -15,14 +15,14 @@ root.render(
   </React.StrictMode>
 );
 
-// Remover o preloader após a montagem do app
-window.addEventListener('load', () => {
+// Remover o preloader assim que o React assumir o controle
+const removeLoader = () => {
   const preloader = document.getElementById('preloader');
   if (preloader) {
     preloader.classList.add('fade-out');
-    // Remover do DOM após a transição de fade
-    setTimeout(() => {
-      preloader.remove();
-    }, 500);
+    setTimeout(() => preloader.remove(), 600);
   }
-});
+};
+
+// Executa após um pequeno delay para garantir que o primeiro frame do App apareceu
+setTimeout(removeLoader, 100);

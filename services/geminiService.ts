@@ -1,6 +1,7 @@
 
 import { GoogleGenAI } from "@google/genai";
 
+// @ts-ignore
 const API_KEY = process.env.API_KEY || "";
 
 export const getGeminiResponse = async (userMessage: string, history: { role: string; parts: { text: string }[] }[]) => {

@@ -1,34 +1,31 @@
 
 # 🦷 Website Dr. Marcio Castro - Odontologia de Excelência
 
-## 🚀 Como subir o site (Passo a Passo CMD)
+## 🚀 Como fazer o site funcionar (Vercel)
 
-Se você encontrou erros de "remote already exists" ou "refspec", use estes comandos nesta ordem:
+Olhando o seu print da Vercel, você está quase lá! Siga exatamente estes ajustes na tela que você está:
+
+1.  **Variáveis de Ambiente (Environment Variables):**
+    *   No campo **Chave (Key)**, apague `EXEMPLO_NOME` e escreva: `API_KEY`
+    *   No campo **Valor (Value)**, apague o código de exemplo e cole a sua **Chave do Gemini**.
+    *   Clique no botão **"Add"** ou **"Adicionar"**.
+
+2.  **Implantar:**
+    *   Agora clique no botão azul lá embaixo: **"Implantar"** (ou **"Deploy"**).
+
+3.  **Aguarde:**
+    *   A Vercel vai levar uns 40 segundos. Quando terminar, ela vai te dar um link (ex: `site-dentista.vercel.app`). **ESSE é o link que vai funcionar.**
+
+## ⚠️ Por que o link do GitHub (github.io) não funciona?
+O GitHub Pages é para sites simples. Como o nosso usa React e IA, ele precisa de um servidor que "compile" o código, e a Vercel faz isso automaticamente.
+
+## 🛠 Comandos para atualizar o código agora:
+No seu CMD, rode isso para aplicar as correções que eu fiz no `index.html`:
 
 ```cmd
-# 1. Limpar conexões antigas
-git remote remove origin
-
-# 2. Inicializar e preparar
-git init
 git add .
-git commit -m "Projeto Dr Marcio Castro"
-git branch -M main
-
-# 3. Conectar ao seu GitHub (Troque pelo seu link)
-git remote add origin https://github.com/CalercMusic/site-dentista.git
-
-# 4. Enviar
-git push -u origin main
+git commit -m "Removendo conflitos e simplificando loader"
+git push
 ```
 
-## 🌍 Hospedagem (Vercel)
-
-Para o site funcionar com os arquivos `.tsx` e a Inteligência Artificial:
-
-1. Crie conta na [Vercel](https://vercel.com) usando seu GitHub.
-2. Importe o projeto `site-dentista`.
-3. Em **Environment Variables**, adicione a `API_KEY` (sua chave do Gemini).
-4. Clique em **Deploy**.
-
-O site estará online em um link profissional em menos de 1 minuto!
+Depois de dar o `push`, a Vercel vai detectar a mudança e tentar atualizar sozinha!

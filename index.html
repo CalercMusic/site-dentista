@@ -88,6 +88,26 @@
 
     <div id="root"></div>
     
-    <script type="module" src="/index.tsx"></script>
+    <!-- O Vite prefere caminhos relativos ou sem a barra inicial se estiver na raiz -->
+    <script type="module" src="./index.tsx"></script>
+
+    <script>
+        // Forçar saída do preloader após o carregamento total dos recursos
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var loader = document.getElementById('preloader');
+                if(loader) loader.classList.add('fade-out');
+            }, 500);
+        });
+        
+        // Backup de segurança: esconde o loader após 5 segundos
+        setTimeout(function() {
+            var loader = document.getElementById('preloader');
+            if(loader && !loader.classList.contains('fade-out')) {
+                loader.classList.add('fade-out');
+            }
+        }, 5000);
+    </script>
+<script type="module" src="/index.tsx"></script>
 </body>
 </html>
